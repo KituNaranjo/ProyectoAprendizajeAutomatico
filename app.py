@@ -1,3 +1,4 @@
+pip install Flask numpy pandas scikit-learn unidecode nltk
 from flask import Flask, request, render_template
 import re
 import numpy as np
