@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación de Sentencias</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            background: #3a6186;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        h1{
+            color: white;   
+        }
+        .container{
+            color: white;
+        }
+        .titulo{
+            width: 100%;
+            height: 20%;
+            h1{
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="titulo">
+            <h1 class="text-center">CLASIFICACIÓN DE SENTENCIAS</h1>
+            <br>
+            <br>
+            <br>
+        </div>
+        <form action="{{ url_for('clasificar') }}" method="post">
+            <div class="form-group">
+                <label for="sentencia"><h4>Ingresa el texto de la sentencia:</h4></label>
+                <textarea name="sentencia" class="form-control" rows="10" placeholder="Escribe el texto de la sentencia aquí"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Clasificar</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
