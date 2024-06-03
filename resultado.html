@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la Clasificación</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            background: #3a6186;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        p{
+            color: black;
+        }
+        .container{
+            color: white;
+        }
+        .titulo{
+            width: 100%;
+            height: 20%;
+            h1{
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Resultado de la Clasificación</h1>
+        <div class="card mt-3">
+            <div class="card-body">
+                <p><strong>Sentencia:</strong></p>
+                <p>{{ sentencia }}</p>
+                <p><strong>Clasificación:</strong> <span class="badge badge-{{ 'success' if clasificacion == 'inocente' else 'danger' }}">{{ clasificacion }}</span></p>
+                <p><strong>Similitud con Culpable:</strong> {{ similitud_culpable }}</p>
+                <p><strong>Similitud con Inocente:</strong> {{ similitud_inocente }}</p>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Clasificar otra sentencia</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
