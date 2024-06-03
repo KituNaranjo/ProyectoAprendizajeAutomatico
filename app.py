@@ -1,4 +1,4 @@
-pip install Flask numpy pandas scikit-learn unidecode nltk
+import os
 from flask import Flask, request, render_template
 import re
 import numpy as np
@@ -72,7 +72,7 @@ def clasificar():
     clasificacion = "culpable" if similitud_culpable > similitud_inocente else "inocente"
     
     return render_template('resultado.html', sentencia=sentencia, clasificacion=clasificacion,
-                        similitud_culpable=similitud_culpable, similitud_inocente=similitud_inocente)
+                         similitud_culpable=similitud_culpable, similitud_inocente=similitud_inocente)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
